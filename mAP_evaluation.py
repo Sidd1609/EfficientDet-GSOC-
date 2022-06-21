@@ -64,7 +64,7 @@ def evaluate_coco(dataset, model, threshold=0.05):
 
 
 if __name__ == '__main__':
-    efficientdet = torch.load("trained_models/signatrix_efficientdet_coco.pth").module
+    efficientdet = torch.load("trained_models/signatrix_efficientdet_coco.pth",map_location ='cpu').module
     efficientdet.cuda()
     dataset_val = CocoDataset("data/COCO", set='val2017',
                               transform=transforms.Compose([Normalizer(), Resizer()]))
