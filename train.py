@@ -84,7 +84,7 @@ def train(opt):
     best_epoch = 0
     model.train()
 
-    num_iter_per_epoch = len(training_generator)
+    num_iter_per_epoch = 10
     for epoch in range(opt.num_epochs):
         model.train()
         # if torch.cuda.is_available():
